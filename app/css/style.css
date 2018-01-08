@@ -1,0 +1,396 @@
+/*
+    * Busy 收集 整理
+ */
+/*雅虎（YUI 3）reset*/
+/*Normalize.css*/
+/*reset*/
+body {
+  font-family: '微软雅黑';
+  font-size: 12px;
+}
+li {
+  list-style: none;
+}
+div:after,
+ul:after {
+  content: '';
+  height: 0;
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+/* 清除内外边距 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+}
+/* 设置默认字体 */
+body,
+button,
+input,
+select,
+textarea {
+  /* for ie */
+  /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+  font: 12px/1 Tahoma, Helvetica, Arial, "微软雅黑", "\5b8b\4f53", sans-serif;
+  /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+h1 {
+  font-size: 18px;
+  /* 18px / 12px = 1.5 */
+}
+h2 {
+  font-size: 16px;
+}
+h3 {
+  font-size: 14px;
+}
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+/* 将斜体扶正 */
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: "Courier New", Courier, monospace;
+}
+/* 统一等宽字体 */
+small {
+  font-size: 12px;
+}
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+/* 重置列表元素 */
+ul,
+ol {
+  list-style: none;
+}
+/* 重置文本格式元素 */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+abbr[title],
+acronym[title] {
+  /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+q:before,
+q:after {
+  content: '';
+}
+/* 重置表单元素 */
+legend {
+  color: #000;
+}
+/* for ie6 */
+fieldset,
+img {
+  border: none;
+}
+/* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 使得表单元素在 ie 下能继承字体大小 */
+}
+/* 重置表格元素 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 重置 hr */
+hr {
+  border: none;
+  height: 1px;
+}
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html {
+  overflow-y: scroll;
+}
+html,
+body {
+  height: 100%;
+}
+#content {
+  min-height: 100%;
+  position: relative;
+}
+#main {
+  padding-bottom: 120px;
+}
+.topNav {
+  background-color: #000;
+  color: #fff;
+  line-height: 35px;
+  height: 35px;
+}
+.topNav ul.t_ul li {
+  float: left;
+  width: 100px;
+  line-height: 35px;
+  height: 35px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+.topNav ul.t_ul a {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  line-height: 35px;
+  height: 35px;
+  display: inline-block;
+}
+.containers {
+  width: 1200px;
+  margin: 0 auto;
+}
+#foot {
+  height: 100px;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+#index .banner {
+  width: 100%;
+  height: 400px;
+  background: url('../images/index/banner.jpg');
+}
+#index .tools {
+  width: 1200px;
+  margin: 40px auto;
+}
+#index .tools .tipsOne,
+#index .tools .tipsTwo,
+#index .tools .tipsThree {
+  width: 300px;
+  height: 90px;
+  float: left;
+  margin-bottom: 0;
+  position: relative;
+  opacity: 1;
+}
+#index .tools .tipsOne p,
+#index .tools .tipsTwo p,
+#index .tools .tipsThree p {
+  margin-bottom: 0;
+}
+#index .tools .tipsOne li,
+#index .tools .tipsTwo li,
+#index .tools .tipsThree li {
+  width: 100px;
+  float: left;
+  text-align: center;
+  position: relative;
+  opacity: 0.8;
+}
+#index .tools .tipsOne li:hover,
+#index .tools .tipsTwo li:hover,
+#index .tools .tipsThree li:hover {
+  text-decoration: none;
+}
+#index .tools .tipsOne li:hover img,
+#index .tools .tipsTwo li:hover img,
+#index .tools .tipsThree li:hover img {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+#index .tools .tipsOne li a,
+#index .tools .tipsTwo li a,
+#index .tools .tipsThree li a {
+  display: inline-block;
+  width: 60px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  line-height: 60px;
+  height: 60px;
+  background: #73be66;
+  position: relative;
+}
+#index .tools .tipsOne li a img,
+#index .tools .tipsTwo li a img,
+#index .tools .tipsThree li a img {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+}
+#index .tools .tipsOne li a:hover,
+#index .tools .tipsTwo li a:hover,
+#index .tools .tipsThree li a:hover {
+  text-decoration: none;
+}
+#index .tools .tipsOne li .del,
+#index .tools .tipsTwo li .del,
+#index .tools .tipsThree li .del {
+  position: absolute;
+  right: 7px;
+  top: -10px;
+  cursor: pointer;
+  display: none;
+  z-index: 9;
+}
+#index .tools .tipsOne li .lock,
+#index .tools .tipsTwo li .lock,
+#index .tools .tipsThree li .lock {
+  position: absolute;
+  left: 7px;
+  top: -10px;
+  cursor: pointer;
+  display: none;
+  z-index: 9;
+}
+#index .tools .tipsOne li P,
+#index .tools .tipsTwo li P,
+#index .tools .tipsThree li P {
+  line-height: 30px;
+  height: 30px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#index .tools .tipsTwo,
+#index .tools .tipsThree {
+  width: auto;
+}
+#index .tools .add {
+  margin-left: 20px;
+  cursor: pointer;
+}
+.cityPicker input {
+  border: 1px solid #ccc;
+  outline: none;
+  width: 200px;
+  line-height: 35px;
+  height: 35px;
+  text-indent: 10px;
+}
+.cityPicker .cityselect {
+  width: 400px;
+  height: auto;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: none;
+  position: relative;
+  background: #fff;
+}
+.cityPicker .cityselect .tab {
+  border-bottom: 2px solid #00aced;
+  margin-bottom: 10px;
+}
+.cityPicker .cityselect .tab li {
+  width: 100px;
+  float: left;
+  line-height: 35px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+.cityPicker .cityselect .tab li.act {
+  background: #00aced;
+  color: #fff;
+}
+.cityPicker .cityselect .province a,
+.cityPicker .cityselect .city a,
+.cityPicker .cityselect .area a {
+  display: inline-block;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #f2f2f2;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cityPicker .cityselect .city {
+  display: none;
+}
+.cityPicker .cityselect .area {
+  display: none;
+}

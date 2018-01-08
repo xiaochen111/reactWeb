@@ -1,0 +1,124 @@
+body{
+	font-family: '微软雅黑'; font-size: 12px;
+}
+
+li{list-style: none;}
+
+div:after,ul:after{
+	content: '';height: 0; clear: both;
+}
+.fl{float: left;}
+.fr{float: right;}
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix {zoom:1;}
+
+@box_shadow:2px 2px 5px #eaeffd inset;
+// 滚动条样式
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar{  
+    width: 8px;  
+    // height: 8px;
+    background-color: #F5F5F5;  
+} 
+/*定义滚动条轨道 内阴影+圆角*/ 
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+}
+/*定义滑块 内阴影+圆角*/ 
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #555;  
+} 
+
+
+// 一些公共方法
+.lh(@height){
+   line-height: @height;
+   height: @height;
+}
+.tc(){
+	text-align: center;
+}
+.tr(){
+  text-align: right;
+}
+.tl(){
+  text-align: left;
+}
+.cur(){
+	cursor: pointer;
+}
+.ft(@size){
+   font-size: @size;
+}
+.wh(@width,@heigth){
+	width: @width; height: @heigth;
+}
+.border(@col:#ccc){
+   border:1px solid @col;
+}
+.bor_b(@col:#ccc){
+	border-bottom:1px solid @col;
+}
+.pt(@bj){
+	padding-top: @bj;
+}
+.pb(@bj){
+	padding-bottom: @bj;
+}
+.pl(@bj){
+	padding-left: @bj;
+}
+.pr(@bj){
+	padding-right: @bj;
+}
+.mt(@bj){
+    margin-top: @bj;
+}
+.mb(@bj){
+    margin-bottom: @bj;
+}
+.ml(@bj){
+    margin-left: @bj;
+}
+.mr(@bj){
+    margin-right: @bj;
+}
+.pos_r(){
+	position: relative;
+}
+.pos_a(){
+	position: absolute;
+}
+.buttonStyle(@width, @height, @bor_radius, @bg, @col){ 
+	 border: none; outline: none; width: @width; height: @height; border-radius: @bor_radius;background: @bg; color: @col; cursor: pointer;
+}
+//定位居中
+.pos-box(@w:600px,@h:360px,@pos:absolute){
+  width: @w;
+  height: @h;
+  position: @pos;
+  left: 50%;
+  top: 50%;
+  margin-left: -@w / 2;
+  margin-top: -@h / 2;
+}
+
+.overhide(){
+    overflow: hidden;text-overflow: ellipsis; white-space: nowrap;  
+}
+
+.boxsize(){
+  box-sizing:border-box;-webkit-box-sizing:border-box;
+}
+
+
+// 公共变量
+@orange:#ff9027;
+@blue:#09438d;
+@btnblue:#377bee;

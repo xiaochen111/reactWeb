@@ -1,0 +1,333 @@
+@import url(./reset.less);
+@import url(./public.less);
+.reset_css();
+
+html,body{height: 100%;}
+
+#content {  
+	min-height:100%;  
+	position: relative;  
+}  
+#main {   
+    padding-bottom: 120px;    
+}  
+
+.topNav{
+	background-color: #000;color: #fff; .lh(35px); height: 35px;
+	ul.t_ul{
+		li{
+			.fl; width: 100px; .lh(35px);.tc(); color: #fff; .cur();
+		}
+		a{
+			color: #fff; width: 100%; .tc();.lh(35px); display: inline-block; 
+		}
+	}
+}
+.containers{
+    width: 1200px;  margin: 0 auto;
+}
+
+
+#foot{
+	height: 100px; background-color: #000; color: #fff;width: 100%; position: absolute; bottom: 0;   
+}
+
+
+// 首页
+#index{
+	.banner{
+		.wh(100%,400px); .pos_r();
+		// background: url('../images/index/banner.jpg')
+		.ant-carousel .slick-slide {
+		  text-align: center;
+		  height: 400px;
+		  line-height: 400px;
+		  background: #364d79;
+		  overflow: hidden;
+		}
+
+		.ant-carousel .slick-slide h3 {
+		  color: #fff;
+		}
+
+		.tabSer{
+			.pos-box(550px,40px);background: #fff; top:300px;
+		}
+	}
+
+
+	.tools{
+		width: 1200px;margin: 40px auto;
+		.tipsOne,.tipsTwo,.tipsThree{
+			width: 300px; height: 90px;.fl;.mb(0); .pos_r(); opacity: 1;
+			p{.mb(0);}
+			li{
+				width: 100px; .fl; .tc();.pos_r();opacity: 0.8;
+				&:hover{
+					text-decoration: none;
+					img{
+						display: inline-block; padding: 0; margin: 0;
+					}
+				}
+				span{
+					display: inline-block;.wh(60px,60px); border-radius: 10px;color:#fff; .ft(25px); .tc(); .lh(60px); background: #73be66;.pos_r(); overflow: hidden;.cur;
+				   img{ vertical-align: top;padding: 0; margin: 0; .wh(60px,60px);}
+				   &:hover{
+						text-decoration: none;
+					}
+				}
+				.del{
+					.pos_a(); right:7px; top:-10px;.cur; display: none; z-index: 9;
+				}
+				.lock{
+					.pos_a(); left:7px; top:-10px;.cur;display: none; z-index: 9;
+				}
+				P{
+					.lh(30px);.tc();.overhide();
+				}
+			}
+		}
+		.tipsTwo,.tipsThree{
+			width: auto;
+		}
+		.add{
+			.ml(20px);.cur;
+		}
+	}
+
+}
+
+//工具弹出层
+.popupBox{
+	.wh(488px,195px);
+
+	.titSer{
+        height: 35px;margin: 15px 0;
+        .titIpt,.urlIpt{
+            .wh(115px,35px);.border(#cad4e2);border-radius: 3px; box-shadow:2px 2px 5px #eaeffd inset;outline: none; .mr(15px); text-indent: 10px;
+        }
+        .urlIpt{
+            .wh(283px,35px);
+        }
+        button{
+            .buttonStyle(60px, 35px, 3px, #428bca, #fff);.ft(14px);
+        }
+    }
+
+    .boxLink{
+        .wh(100%,125px);.border(#cad4e2);overflow: auto; padding:5px 15px;
+        span{
+            display: inline;.lh(25px);.fl;.mr(15px); color: #333;cursor: pointer;
+        }
+    }
+}
+
+
+//登录弹出层
+.loginPopup{
+	.wh(100%,auto);
+}
+
+
+
+
+
+
+// 会员
+#menber{
+	.titTop{
+		.lh(35px);.mt(15px);
+	}
+}
+.leftNav{
+	width: 250px;.fl;
+	ul{
+		.border();
+		li{
+			.lh(35px);.bor_b();
+		}
+	}
+}
+.rightMain{
+	width: 935px;.fr; height: auto;.border();
+}
+
+// 钱包
+#wallet{
+	.boxsize(); padding: 15px;
+	h2{
+		.ft(24px);font-weight: normal;
+	}
+	.money{
+        .mt(15px);
+        span{
+            color: #0075ce; .ft(50px);.fl;
+        }
+        a{
+            .buttonStyle(110px, 35px, 3px, @btnblue, #fff);.fr;.mt(10px); display: inline-block; line-height: 35px;.tc();
+        }
+    }
+    .tdOver{
+    	.overhide();width: 100%;display: inline-block;
+    }
+}
+
+
+//钱包--账户
+#account,#memberRecharge{
+    dl{.mb(0)}
+    .headTit{
+        .lh(40px);border-bottom: 1px solid #d9dfe6;
+        .curAcc{
+            .wh(235px,40px);.ft(14px);font-weight: bold;.fl;
+        }
+        img{vertical-align: -5%;}
+        .jinbi{
+            .fl;
+        }
+        .question{
+            .fr; color: #656565;.ft(14px);
+        }
+    }
+    
+
+    .recharge{
+        height: 80px;.mt(15px);.ft(14px);
+        dt{
+            width: 80px;.fl;.ft(14px);.lh(60px);
+        }
+        dd{
+            .wh(210px,60px); .border(#d9dfe6);.mr(40px);.fl;.cur;
+            .cz{
+                display: inline-block; height: 60px; border-right:1px solid #d9dfe6; .tc(); width: 60px; line-height: 60px;.fl;
+            }
+            .ajb{
+                width: 142px;.tc();display: inline-block;.lh(60px);.fl;
+            }
+            &.currentAct{
+                .border(#cc0c23);background: #fff6f6;.pos_r();
+                .cz{border-right:1px solid #cc0c23;}
+                &:after{
+                    content: url(../images/wallet/nike.png); .pos_a(); bottom: -5px; right: 0;
+                }
+                &:before{
+                    content: url(../images/wallet/tuijan.png); .pos_a(); left:-2px;top:-2px; 
+                }
+            }
+        }
+    }
+
+    .payment{
+        height: 60px;.mt(15px);.ft(14px);
+        dt{
+            width: 80px;.fl;.ft(14px);.lh(40px);
+        }
+        dd{
+            .wh(120px,42px); .border(#d9dfe6);.fl;.lh(42px);.tc();.cur;
+            img{vertical-align: middle;}
+            &.curpay{
+                .border(#cc0c23);.pos_r();
+                 &:after{
+                    content: url(../images/wallet/nike.png); .pos_a(); bottom: -16px; right: 0;
+                }
+            }
+        }
+    }
+
+    .actual{
+        height: 60px;.mt(15px);.ft(14px);
+        dt{
+            width: 80px;.fl;.ft(14px);.lh(40px);
+        }
+        dd{
+            .wh(220px,42px);.fl;.lh(40px);
+            .yuan{.ft(20px);font-weight: bold;color: #cc0c23;}
+            .shen{.ft(14px);color: #cc0c23;}
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// citypicker
+.cityPicker{
+	input{
+		.border(); outline: none; width: 200px; .lh(35px); text-indent: 10px;
+	}
+	.cityselect{
+		width: 400px; height: auto;.boxsize(); padding: 10px;.border(); display: none; position: relative;background: #fff;
+		.tab{
+			border-bottom: 2px solid #00aced;.mb(10px);
+			li{
+				width: 100px;.fl;.lh(35px); .tc();.cur;
+				&.act{
+					background: #00aced; color: #fff;
+				}
+			}
+		}
+		.province,.city,.area{
+			a{
+				display: inline-block; width: 80px; height: 32px; line-height: 32px; .tc(); background:#f2f2f2;margin-right:8px;.mb(10px); .cur; color: #333;.overhide();
+			}
+		}
+		.city{
+           display: none;
+		}
+		.area{
+			display: none;
+		}
+	}
+}
